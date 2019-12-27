@@ -1,0 +1,27 @@
+uuid: d7ed12a9-3ca0-43b6-8218-1b84d259da6b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - articles
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: articles_page_title
+theme: articles
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

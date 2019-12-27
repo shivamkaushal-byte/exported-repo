@@ -1,0 +1,29 @@
+uuid: 0a36989b-3611-4778-b52e-f0a0036b4d5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.slide
+id: entity_subqueue.slide.default
+targetEntityType: entity_subqueue
+bundle: slide
+mode: default
+content:
+  items:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,21 @@
+uuid: d74d67a7-9ce8-440a-8fb3-2a37bbc5a55d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_namel
+field_name: field_namel
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

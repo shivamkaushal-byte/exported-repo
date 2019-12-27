@@ -1,0 +1,69 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Form\FormBase;
+use Drupal\node\Entity\Node;
+use Drupal\user\Entity\USER;
+
+function demomodule_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+ if($form_id == 'node_test_form') {
+
+   $form['#validate'][]='new_validate';
+
+   foreach (array_keys($form['actions']) as $action) {
+     if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+       $form['actions'][$action]['#submit'][] = 'demomodule_form_submit';
+     }
+   }
+ }
+
+
+}
+
+
+function demomodule_form_submit(array $form, FormStateInterface $form_state){
+
+
+  $title = $form_state->getValue('title')[0]['value'];
+  $username = $form_state->getValue('field_username')[0]['value'];
+  $password = $form_state->getValue('field_upassword')[0]['value'];
+  $email = $form_state->getValue('field_uemail')[0]['value'];
+
+  $node = Node::create(['type' => 'test2']);
+  $node->set('title', $title);
+  $node->set('field_uname', $username);
+  $node->set('field_useremail', $email);
+  $node->set('field_userpassword', $password);
+  $node->status = 1;
+//  kint($node);die;
+//  $node->enforceIsNew();
+  $node->save();
+  drupal_set_message( "Node with nid " . $node->id() . " saved!\n");
+
+}
+
+function new_validate ($form, FormStateInterface $form_state) {
+  if(strlen($form_state->getValue('field_upassword')[0]['value']) < 5) {
+
+    $form_state->setErrorByName('field_value', t('password length must be at least 5 characters.'));
+  }
+}
+
+
+
+
+
+
+// if ($selectedValue = $form_state->getValue('field_catergory')[0]['target_id']) {
+//    $conn = Database::getConnection();
+//    $data = $conn->query("SELECT entity_id FROM taxonomy_term__field_catergory WHERE field_catergory_target_id = $selectedValue")->fetchAll();
+//    $pro_id[] = $data[0]->entity_id;
+//    for($i=0; $i<count($pro_id); $i++)
+//    {
+//      $product_name[] = $form['field_product']['widget']['#options'][$value];
+//      foreach($product_name as $value)  {
+//           $field_product[$pro_id[$i]] = $value;
+//           print_r($field_product) ;die;
+//           $form['field_product']['widget']['#options'] = $field_product;
+//   }
+//}

@@ -1,0 +1,12 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/base/elements.css: {}
+    component:
+      css/components/sidebar.css: {}
+
+    layout:
+      css/layout.css: {}
+    theme:
+      css/print.css:

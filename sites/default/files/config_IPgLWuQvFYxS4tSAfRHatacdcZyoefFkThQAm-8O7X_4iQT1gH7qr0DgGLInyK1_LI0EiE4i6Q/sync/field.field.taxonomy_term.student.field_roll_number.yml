@@ -1,0 +1,19 @@
+uuid: e351d30d-b1f4-44e4-aeb1-ef0c33ac2d35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_roll_number
+    - taxonomy.vocabulary.student
+id: taxonomy_term.student.field_roll_number
+field_name: field_roll_number
+entity_type: taxonomy_term
+bundle: student
+label: 'roll number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

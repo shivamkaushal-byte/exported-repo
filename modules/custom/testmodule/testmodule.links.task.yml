@@ -1,0 +1,11 @@
+testmodule.tab1:
+  route_name: testmodule.form
+  title: first
+  base_route: testmodule.configform
+  weight: 20
+
+testmodule.tab2:
+  route_name: testmodule.configform
+  title: second
+  base_route: testmodule.configform
+  weight: 20

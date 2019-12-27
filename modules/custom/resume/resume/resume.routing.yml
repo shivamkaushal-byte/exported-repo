@@ -1,0 +1,32 @@
+
+resume.form:
+ path: '/resume/myform'
+ defaults:
+   _title: 'Application form'
+   _form: '\Drupal\resume\Form\ResumeForm'
+ requirements:
+   _permission: 'access content'
+
+hello_world:
+    path: '/resume/world'
+    defaults:
+        _controller: Drupal\resume\Controller\ThankyouController::hello
+    requirements:
+        _permission: 'access content'
+
+resume.getdetails:
+ path: '/resume/getdetails'
+ defaults:
+   _title: 'Fetch detail of Employee'
+   _controller: '\Drupal\resume\Controller\ThankyouController::getDetails'
+ requirements:
+   _permission: 'access content'
+
+
+resume.display:
+  path: '/resume/table'
+  defaults:
+    _controller: '\Drupal\resume\Controller\DisplayTableController::display'
+    _title: 'Custom Table Data'
+  requirements:
+    _permission: 'access content'

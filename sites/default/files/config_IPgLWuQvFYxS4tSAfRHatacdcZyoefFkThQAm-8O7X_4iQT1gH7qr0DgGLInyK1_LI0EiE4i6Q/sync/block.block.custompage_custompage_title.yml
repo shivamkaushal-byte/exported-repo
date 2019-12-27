@@ -1,0 +1,27 @@
+uuid: 2b5c4fdd-1fda-4c74-b433-c5cf05cfe083
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - custompage
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: custompage_custompage_title
+theme: custompage
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

@@ -1,0 +1,21 @@
+uuid: 419957c6-890f-44e2-8355-be33c2a98bb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_namef
+    - node.type.article
+  module:
+    - text
+id: node.article.field_namef
+field_name: field_namef
+entity_type: node
+bundle: article
+label: namef
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

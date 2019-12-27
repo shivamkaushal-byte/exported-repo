@@ -1,0 +1,5 @@
+name: custom_block
+description: this is for first custom Custom_Block
+type: module
+package: custom
+core: 8.x

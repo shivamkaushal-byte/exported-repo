@@ -1,0 +1,32 @@
+uuid: 0354db84-2447-4ae4-8129-ed6e13b7b668
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.information.field_end_date
+    - field.field.node.information.field_file
+    - field.field.node.information.field_name
+    - field.field.node.information.field_picture
+    - field.field.node.information.field_start_date
+    - field.field.node.information.field_student
+    - node.type.information
+  module:
+    - user
+id: node.information.teaser
+targetEntityType: node
+bundle: information
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_end_date: true
+  field_file: true
+  field_name: true
+  field_picture: true
+  field_start_date: true
+  field_student: true

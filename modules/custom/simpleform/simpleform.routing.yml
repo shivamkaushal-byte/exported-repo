@@ -1,0 +1,7 @@
+resume.form:
+ path: '/simpleform/myform'
+ defaults:
+   _title: 'Simple Form'
+   _form: '\Drupal\simpleform\Form\SimpleCustomForm'
+ requirements:
+   _permission: 'access content'

@@ -1,0 +1,30 @@
+uuid: 4df3e5bf-35c1-439d-81d7-f6a376be8a93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.products.field_catergory
+    - taxonomy.vocabulary.products
+  module:
+    - text
+id: taxonomy_term.products.default
+targetEntityType: taxonomy_term
+bundle: products
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_catergory:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

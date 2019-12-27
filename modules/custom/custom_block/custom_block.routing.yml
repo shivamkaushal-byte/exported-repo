@@ -1,0 +1,7 @@
+custom_block:
+  path: '/custom_form'
+  defaults:
+    _form: '\Drupal\custom_block\Form\custom_form'
+    _title: 'custom form'
+  requirements:
+    _permission: 'access content'

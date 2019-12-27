@@ -1,0 +1,18 @@
+uuid: ba20c428-50a4-43d9-90c7-dbb56e5bc46a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: events
+type: events
+description: 'events held in india'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

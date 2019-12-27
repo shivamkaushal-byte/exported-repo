@@ -1,0 +1,5 @@
+name: testmodule
+description: this is custom module for config form
+type: module
+package: custom
+core: 8.x

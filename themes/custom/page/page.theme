@@ -1,0 +1,11 @@
+<?php
+
+function page_preprocess_page(&$vars, $hook)
+{
+
+  $vars['uid'] = \Drupal::currentUser()->id();
+
+  //$account = $variables['elements']['#user'];
+
+//  $variables['username'] = $account->getDisplayName();
+}

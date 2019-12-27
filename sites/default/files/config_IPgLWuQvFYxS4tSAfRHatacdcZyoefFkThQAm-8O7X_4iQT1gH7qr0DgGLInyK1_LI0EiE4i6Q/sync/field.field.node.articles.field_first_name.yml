@@ -1,0 +1,21 @@
+uuid: b2991e06-028f-4ab4-90a4-638839d85ab7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_first_name
+    - node.type.articles
+  module:
+    - text
+id: node.articles.field_first_name
+field_name: field_first_name
+entity_type: node
+bundle: articles
+label: 'first name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

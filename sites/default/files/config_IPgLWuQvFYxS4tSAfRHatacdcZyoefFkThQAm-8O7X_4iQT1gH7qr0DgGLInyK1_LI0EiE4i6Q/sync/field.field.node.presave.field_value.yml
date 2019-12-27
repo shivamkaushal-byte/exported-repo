@@ -1,0 +1,19 @@
+uuid: 85d1f7ab-545b-4321-9c1f-829aeea925db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_value
+    - node.type.presave
+id: node.presave.field_value
+field_name: field_value
+entity_type: node
+bundle: presave
+label: Value
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

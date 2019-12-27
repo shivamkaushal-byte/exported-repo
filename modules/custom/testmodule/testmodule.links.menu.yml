@@ -1,0 +1,6 @@
+testmodule.configform:
+  title: 'test module config form'
+  description: 'this is for config form'
+  parent: system.admin_config_development
+  route_name: testmodule.configform
+  weight: 100

@@ -1,0 +1,7 @@
+premodule.form:
+  path: '/presaveform'
+  defaults:
+    _title: 'presave form'
+    _form: '\Drupal\premodule\Form\premoduleSaveForm'
+  requirements:
+    _permission: 'access content'

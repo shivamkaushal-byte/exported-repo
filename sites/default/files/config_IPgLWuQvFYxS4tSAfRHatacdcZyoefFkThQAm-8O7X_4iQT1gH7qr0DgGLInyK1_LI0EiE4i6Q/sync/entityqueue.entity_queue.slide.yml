@@ -1,0 +1,26 @@
+uuid: aa106021-8ce8-4a2d-9bd4-e4b89f41375a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: slide
+label: slide
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      slider: slider
+    sort:
+      field: nid
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse_in_admin: false

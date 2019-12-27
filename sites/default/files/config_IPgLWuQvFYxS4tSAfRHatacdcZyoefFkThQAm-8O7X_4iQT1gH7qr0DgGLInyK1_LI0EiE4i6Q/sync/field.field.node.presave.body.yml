@@ -1,0 +1,22 @@
+uuid: 0424414d-6325-4d3f-b2a8-b0414a5e45f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.presave
+  module:
+    - text
+id: node.presave.body
+field_name: body
+entity_type: node
+bundle: presave
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

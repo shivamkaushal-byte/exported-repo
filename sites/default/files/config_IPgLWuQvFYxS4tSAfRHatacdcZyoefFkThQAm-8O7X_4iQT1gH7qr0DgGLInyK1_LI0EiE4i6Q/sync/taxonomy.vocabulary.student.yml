@@ -1,0 +1,8 @@
+uuid: baed887c-d4d1-4357-aada-b1f5286debfe
+langcode: en
+status: true
+dependencies: {  }
+name: student
+vid: student
+description: ''
+weight: 0

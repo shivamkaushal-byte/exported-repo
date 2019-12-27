@@ -1,0 +1,62 @@
+uuid: 4573eef8-f86c-4c38-8857-5c15cd367afa
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.articles.field_carss
+    - field.field.node.articles.field_company_name
+    - field.field.node.articles.field_designation
+    - field.field.node.articles.field_first_name
+    - field.field.node.articles.field_last_name
+    - node.type.articles
+  module:
+    - text
+    - user
+id: node.articles.full
+targetEntityType: node
+bundle: articles
+mode: full
+content:
+  field_carss:
+    weight: 106
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_company_name:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_designation:
+    weight: 104
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_first_name:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_last_name:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

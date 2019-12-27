@@ -1,0 +1,79 @@
+uuid: e9a7c59b-288e-46ae-b8c5-4380d352dd16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.information.field_end_date
+    - field.field.node.information.field_file
+    - field.field.node.information.field_name
+    - field.field.node.information.field_picture
+    - field.field.node.information.field_start_date
+    - field.field.node.information.field_student
+    - node.type.information
+  module:
+    - datetime
+    - file
+    - image
+    - user
+id: node.information.default
+targetEntityType: node
+bundle: information
+mode: default
+content:
+  field_end_date:
+    weight: 104
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_file:
+    weight: 107
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_name:
+    weight: 102
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_picture:
+    weight: 106
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_start_date:
+    weight: 103
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_student:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

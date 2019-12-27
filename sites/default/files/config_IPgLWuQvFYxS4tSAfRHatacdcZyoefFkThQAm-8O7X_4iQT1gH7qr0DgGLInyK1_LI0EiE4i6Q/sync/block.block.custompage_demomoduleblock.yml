@@ -1,0 +1,26 @@
+uuid: 2077dfa8-abf2-4053-be82-7a61f158c2dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - demomodule
+    - system
+  theme:
+    - custompage
+id: custompage_demomoduleblock
+theme: custompage
+region: content
+weight: 0
+provider: null
+plugin: demomoduleBlock
+settings:
+  id: demomoduleBlock
+  label: demomoduleBlock
+  provider: demomodule
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

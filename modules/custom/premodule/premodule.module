@@ -1,0 +1,222 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Form\FormBase;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Database\Database;
+use Drupal\Core\Url;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\AppendCommand;
+use Drupal\Core\Ajax\HtmlCommand;
+
+
+function premodule_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  if ($form_id == 'node_presave_form' || $form_id == 'node_presave_edit_form') {
+    $form['#validate'][] = 'example_validate';
+    //unset($form['field_gender']['widget']['#options']['Male']);
+    $form['field_gender']['widget']['#required']=TRUE;
+    // foreach (array_keys($form['actions']) as $action) {
+    //   if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        // kint( $form['actions'][$action]); die;
+    //     $form['actions'][$action]['#submit'][] = 'premodule_form_submit';
+      // }
+   //}
+      //
+      //
+      //    $form['country'] = [
+   		// 	'#type' => 'select',
+   		// 	'#title' => 'Select your country',
+   		// 	'#options' => ['' => '-- select --', 'Afghanistan' => 'Afghanistan', 'Albania' => 'Albania'],
+   		// 	'#ajax' => [
+   		// 	'callback' => '::statesCallback',
+   		// 	'wrapper' => 'state-wrapper',
+   		// 	],
+      //   '#prefix' => '<div class="select-vendor">',
+      //   '#suffix' => '</div>',
+   		// ];
+     	// $form['states_wrapper'] = [
+     	// 		'#type' => 'container',
+     	// 		'#attributes' => ['id' => 'state-wrapper'],
+      //     '#required' => TRUE,
+      //     '#prefix' => '<div class="select-vendor">',
+      //     '#suffix' => '</div>',
+     	// 	];
+
+
+        array_unshift($form['actions']['submit']['#submit'], "premodule_form_submit");
+
+  }
+  if($form_id== 'user-register-form') {
+    $form['gender'] = [
+      '#type' => 'radios',
+      '#title' => t('Gender'),
+      '#options' => array('Male' => 'Male', 'Female' => 'Female'),
+      '#required' => TRUE,
+    ];
+
+  }
+
+  if($form_id=='node_products_form') {
+    if (isset($form['field_catergory'])) {
+    $form['field_catergory']['widget']['#ajax'] = array(
+      'callback' => 'premodule_product_change',
+      'event' => 'change',
+      'wrapper' => 'edit ',
+      'progress' => [
+      'type' => 'throbber',
+      'message' =>('Please Wait...'),
+        ]
+      );
+    }
+
+  }
+
+$form['field_product']['#attributes']['id'][] = 'edit';
+}
+
+
+// function statesCallback(array &$form, FormStateInterface $form_state) {
+//
+//   //$country = $form_state->getValues()['fieldset_testing']['country'];
+//
+//     $form['states_wrapper']['states'] = [
+// 		 '#type' => 'select',
+// 		 //'#options' => $this->states[$country],
+// 		 '#options' => ['a'=> 'a'],
+// 		];
+//
+//   return $form['states_wrapper'];
+//   }
+
+   //$cat1 = $form['field_catergory']['widget']['#options'][24];
+  //  if(isset($cat)){
+  //    $cat_term = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties(['name' => $cat]);
+  //    $term = reset($cat_term);
+  //    $term_id = $term->id();
+  //    $conn = Database::getConnection();
+  //    $data = $conn->query("SELECT entity_id FROM taxonomy_term__field_catergory WHERE field_catergory_target_id = $term_id")->fetchAll();
+  //    $pro_id = $data[0]->entity_id;
+  //    $form['field_product'] = $form['field_product']['widget']['#options'][$pro_id];
+  //   }
+  // }
+
+function premodule_product_change(array &$form, FormStateInterface &$form_state) {
+  //print_r($form['field_product']['widget']['#options']); die;
+  // $form['field_product']['widget']['#options'] = [
+  //   '21' => 'vikas'
+  // ];
+  // return $form['field_product'];
+  //die('dddd');
+ //  $cat = $form_state->getValue('field_catergory')[0]['value'];
+ // print_r($form_state->getValue('field_catergory')[0]['target_id']); die;
+   // if(isset($form_state->getValue('field_catergory')[0]['target_id'])){
+   //   // $cat_term = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties(['name' => $cat]);
+   //   // $term = reset($cat_term);
+   //   $term_id = $form_state->getValue('field_catergory')[0]['target_id'];
+   //   $conn = Database::getConnection();
+   //   $data = $conn->query("SELECT entity_id FROM taxonomy_term__field_catergory WHERE field_catergory_target_id = $term_id")->fetchAll();
+   //   $pro_id = array_column($data, 'entity_id');
+   //   $form['field_product']['widget']['#options'][21] = 'test';
+   //  }
+    if ($selectedValue = $form_state->getValue('field_catergory')[0]['target_id']) {
+       $conn = Database::getConnection();
+       $data = $conn->query("SELECT entity_id FROM taxonomy_term__field_catergory WHERE field_catergory_target_id = $selectedValue")->fetchAll();
+       for ($i=0; $i<count($data); $i++) {
+         $pro_id[] = $data[$i]->entity_id;
+        //print_r($form['field_product']['widget']['#options']);
+        // die();
+         $product_name[] = $form['field_product']['widget']['#options'][$pro_id[$i]];
+         $field_product[$pro_id[$i]] = $product_name[$i];
+       }
+       $form['field_product']['widget']['#options'] = $field_product;
+      }
+
+        // if($pro_id == '21'){
+        //   $field_product = [
+        //     '21' => 'Product1',
+        //   ];
+        //   $form['field_product']['widget']['#options'] = $field_product;
+        // }
+        // else if($pro_id =='22') {
+        //   $field_product = [
+        //     '22' => 'Product2',
+        //   ];
+        //   $form['field_product']['widget']['#options'] = $field_product;
+        // }
+        // else {
+        //   $field_product = [
+        //     '23' => 'Product3',
+        //   ];
+        //   $form['field_product']['widget']['#options'] = $field_product;
+        // }
+
+      return $form['field_product'];
+      // $pro_id = [
+      //   '21' => 'Product1',
+      //   '22' => 'Product2',
+      //   '23' => 'Product3',
+      // ];
+      //print_r($pro_id);die;
+
+        // $form['product_options'] = [
+        //     '#type' => 'value',
+        //     '#value' => [
+        //       '_none' => 'None',
+        //       '21' => 'Product1',
+        //       '22' => 'Product2',
+        //       '23' => 'Product3'
+        //     ]
+        //   ];
+
+        // $form['field_product'] = [
+        //     '#title' => t('product'),
+        //     '#type' => 'select',
+        //     '#description' => "Select the project count type.",
+        //     '#options' => [
+        //       '_none' => 'None',
+        //       '21' => 'Product1',
+        //       '22' => 'Product2',
+        //       '23' => 'Product3'
+        //
+        //     ]
+        //   ];
+ }
+
+function premodule_form_submit(array $form, FormStateInterface &$form_state){
+
+  $gender = $form_state->getValue('field_gender')[0]['value'];
+
+
+//  $form_state->setValue('field_test', ['value' => 'abc']);
+  $form_state->setValue('field_value', ['value' => 'ttest']);
+  // kint($form_state);
+  // die();
+  //$title = $form_state->getValue('title')[0]['value'];
+// kint($form_state);
+// kint($form_state->getValues());
+// die();
+  // $node = Node::create(['type' => 'page']);
+  // $node->set('title', $title);
+  // $node->status = 1;
+//  kint($node);die;
+//  $node->enforceIsNew();
+//  $node->save();
+//  drupal_set_message( "Node with nid " . $node->id() . " saved!\n");
+
+}
+
+
+
+
+
+
+    // $form['value']['#default_value'] = $gender;
+
+
+//function example_validate ($form, FormStateInterface $form_state) {
+//print_r($form_state->getValue('field_value')); die;
+  //if(strlen($form_state->getValue('field_value')[0]['value']) <= 5 ){
+  //  $form_state->setErrorByName('field_value', t('value length must be at least 5 characters.'));
+    //}
+  //}

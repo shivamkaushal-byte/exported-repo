@@ -1,0 +1,30 @@
+uuid: 158ab9c6-7d92-44cd-926f-e854d005e692
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.presave.body
+    - node.type.presave
+  module:
+    - text
+    - user
+id: node.presave.teaser
+targetEntityType: node
+bundle: presave
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,29 @@
+uuid: c00a3db2-2eff-4f9d-9ac6-5dadc593ed9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_carss
+    - node.type.articles
+    - taxonomy.vocabulary.cars
+id: node.articles.field_carss
+field_name: field_carss
+entity_type: node
+bundle: articles
+label: carss
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      cars: cars
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

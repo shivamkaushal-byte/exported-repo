@@ -1,0 +1,16 @@
+testmodule.configform:
+  path: '/testform'
+  defaults:
+    _title: 'config form'
+    _form: '\Drupal\testmodule\Form\testmoduleConfigForm'
+  requirements:
+    _permission: 'access content'
+
+
+testmodule.form:
+  path: '/configform'
+  defaults:
+    _title: 'config form'
+    _form: '\Drupal\testmodule\Form\testmoduleConfigForm'
+  requirements:
+    _permission: 'access content'

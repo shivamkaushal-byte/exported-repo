@@ -1,0 +1,22 @@
+uuid: 6abe9ac1-8fac-4e6f-bf9a-f1cb6dd60854
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - articles
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: articles_messages
+theme: articles
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,54 @@
+uuid: c81bd15e-9e56-474d-a168-6fd19aaa9ac4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.test2.body
+    - field.field.node.test2.field_uname
+    - field.field.node.test2.field_useremail
+    - field.field.node.test2.field_userpassword
+    - node.type.test2
+  module:
+    - text
+    - user
+id: node.test2.default
+targetEntityType: node
+bundle: test2
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_uname:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_useremail:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_userpassword:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

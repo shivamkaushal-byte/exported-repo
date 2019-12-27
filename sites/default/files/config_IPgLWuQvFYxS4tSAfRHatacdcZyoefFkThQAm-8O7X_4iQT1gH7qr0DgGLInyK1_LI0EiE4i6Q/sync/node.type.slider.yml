@@ -1,0 +1,18 @@
+uuid: 12517e84-f7d1-4c9c-988b-112c3cfe1dd3
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: slider
+type: slider
+description: 'this content type is only for slideshow'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

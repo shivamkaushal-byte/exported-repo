@@ -1,0 +1,26 @@
+uuid: bb204149-e089-4864-aa77-3f9eb0677a92
+langcode: en
+status: true
+dependencies:
+  module:
+    - demomodule
+    - system
+  theme:
+    - stark
+id: stark_demomoduleblock
+theme: stark
+region: content
+weight: 0
+provider: null
+plugin: demomoduleBlock
+settings:
+  id: demomoduleBlock
+  label: demomoduleBlock
+  provider: demomodule
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

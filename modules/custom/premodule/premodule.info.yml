@@ -1,0 +1,5 @@
+name: premodule
+description: this is another custom module
+type: module
+package: custom
+core: 8.x

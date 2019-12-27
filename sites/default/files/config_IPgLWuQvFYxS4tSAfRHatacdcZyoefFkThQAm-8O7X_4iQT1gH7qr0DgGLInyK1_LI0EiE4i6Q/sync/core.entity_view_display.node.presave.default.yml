@@ -1,0 +1,55 @@
+uuid: 2b1f268f-3193-4a35-94e5-db5fc8dcfd5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.presave.body
+    - field.field.node.presave.field_gender
+    - field.field.node.presave.field_test
+    - field.field.node.presave.field_value
+    - node.type.presave
+  module:
+    - options
+    - text
+    - user
+id: node.presave.default
+targetEntityType: node
+bundle: presave
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_gender:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_test:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_value:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

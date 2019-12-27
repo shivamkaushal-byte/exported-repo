@@ -1,0 +1,20 @@
+uuid: b76a36cc-4b27-4123-adb9-ddae7d86bbb4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_carss
+field_name: field_carss
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 5
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

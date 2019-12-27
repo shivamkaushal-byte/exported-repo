@@ -1,0 +1,19 @@
+uuid: 49dcad70-2ed3-4232-b416-0fd88cfe5412
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_email
+    - taxonomy.vocabulary.student
+id: taxonomy_term.student.field_email
+field_name: field_email
+entity_type: taxonomy_term
+bundle: student
+label: email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

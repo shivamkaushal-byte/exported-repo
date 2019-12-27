@@ -1,0 +1,9 @@
+$nid = $request->query->get('nid');
+if (empty($nid)) {
+  return new JsonResponse('Please provide node id.', 400, [], FALSE);
+
+}
+if (!in_array($nid, $nids)) {
+  return new JsonResponse('node id is not present.');
+
+}

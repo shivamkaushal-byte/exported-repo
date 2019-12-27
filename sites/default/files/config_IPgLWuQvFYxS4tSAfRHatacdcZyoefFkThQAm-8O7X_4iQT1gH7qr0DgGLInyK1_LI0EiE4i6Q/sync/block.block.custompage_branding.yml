@@ -1,0 +1,25 @@
+uuid: c386852c-8801-4b3c-9324-7da839c2352c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - custompage
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: custompage_branding
+theme: custompage
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

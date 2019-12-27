@@ -1,0 +1,28 @@
+uuid: d74369a8-b133-430f-9fec-d1f474a2de4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.slide
+id: entity_subqueue.slide.default
+targetEntityType: entity_subqueue
+bundle: slide
+mode: default
+content:
+  items:
+    label: hidden
+    type: entity_reference_label
+    weight: 0
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+  title:
+    label: hidden
+    type: string
+    weight: -10
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden: {  }

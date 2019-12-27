@@ -1,0 +1,19 @@
+uuid: aea12e04-b08f-4e74-8221-e5ec2b912c24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_namel
+    - node.type.article
+id: node.article.field_namel
+field_name: field_namel
+entity_type: node
+bundle: article
+label: namel
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
